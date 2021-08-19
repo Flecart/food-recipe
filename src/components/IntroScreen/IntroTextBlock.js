@@ -1,7 +1,7 @@
 import IntroText from "./IntroText";
 import { Box, Grid, Fade } from "@material-ui/core";
 
-export default function IntroTextBlock() {
+export default function IntroTextBlock(props) {
     return(
         <Fade in timeout={2000}>
             <Box pt="35vh" mx="10vmin">

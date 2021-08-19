@@ -1,7 +1,8 @@
 import { Box } from "@material-ui/core"
+import { useEffect } from "react"
+import PropTypes from "prop-types"
 import IntroTextBlock from "./IntroTextBlock"
 import IntroImage from "./IntroImage"
-import { useEffect } from "react"
 
 
 export default function IntroScreen(props) {
@@ -16,3 +17,7 @@ export default function IntroScreen(props) {
         </Box>
     )
 }
+
+IntroScreen.propTypes = {
+    showNav: PropTypes.func.isRequired,
+};
