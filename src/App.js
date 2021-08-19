@@ -1,14 +1,24 @@
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { useState } from "react";
 import IntroScreen from "./components/IntroScreen/IntroScreen";
-import History from "./components/Receipts/History";
-import Receipt from "./components/Receipts/Receipt";
+import History from "./components/Recipes/History";
+import Receipt from "./components/Recipes/Recipe";
 import Navigator from "./components/Navigator";
 import NotFound from "./components/NotFound";
 
 function App() {
     const [showNav, setShowNav] = useState(false);
 
+    // ID correspond to the location of the object here.
+    const [currentPages, setCurrentPages] = useState([
+        {
+            meals: [
+                {
+                    "idMeal": -1
+                }
+            ]
+        },
+    ]);
     return(
         <Router>
             <div> 
@@ -25,7 +35,7 @@ function App() {
                     <Redirect from="/history" to="/not-found"/>
 
                     <Route exact path="/receipt/:id">
-                        <Receipt showNav={setShowNav}/>
+                        <Receipt currentPages={currentPages} setCurrentPages={setCurrentPages} showNav={setShowNav}/>
                     </Route>
                     <Redirect from="/receipt" to="/not-found"/>
 
