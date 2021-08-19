@@ -25,7 +25,7 @@ export default function IntroImage() {
     const classes = useImageStyle();
     return(
         <ImageBox>
-            <img src={ image } className={classes.image} alt="Intro Screen Image"/>
+            <img src={ image } className={classes.image} alt="Intro Screen"/>
         </ImageBox>
     );
 }
