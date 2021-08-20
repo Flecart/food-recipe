@@ -18,7 +18,7 @@ function ScrollTop(props) {
     const trigger = useScrollTrigger();
   
     const handleClick = (event) => {
-      const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
+      const anchor = (event.target.ownerDocument || document).querySelector('#top-appbar');
   
       if (anchor) {
         anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -38,3 +38,4 @@ function ScrollTop(props) {
     children: PropTypes.element.isRequired
   };
   
+  export default ScrollTop;

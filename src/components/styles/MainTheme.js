@@ -1,5 +1,11 @@
 import { createTheme } from "@material-ui/core";
 
+// I only used this in the typography on the main page
+// i Know that in bigger projects its easier to use themes like this
+// but for this one it was just easier to apply theme directly in component
+// files.
+
+
 export const MainTheme = createTheme({
     typography: {
         h3: {
@@ -13,5 +19,3 @@ export const MainTheme = createTheme({
         },
     },
 });
-
-// todo maike everything bigger

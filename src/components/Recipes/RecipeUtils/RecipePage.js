@@ -1,8 +1,12 @@
 import { Typography, Container, Box, Divider, Button } from "@material-ui/core";
-import PropTypes from "prop-types"
 import { useEffect, useState } from "react";
-import RecipeTable from "./PageComponents/RecipeTable";
 import { makeStyles } from '@material-ui/core/styles';
+import RecipeTable from "./PageComponents/RecipeTable";
+import PropTypes from "prop-types"
+
+import ScrollTop from "./BackToTop/ScroolTop";
+import Fab from '@material-ui/core/Fab';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 const useImageStyle = makeStyles({
     image: {
@@ -11,6 +15,20 @@ const useImageStyle = makeStyles({
         objectFit: "cover",
         borderRadius: "1px",
         boxShadow: "0px 0px 0px 2px rgba(127,0,0,0.2)",
+    },
+    icon: {
+        zIndex: 10,
+
+        backgroundColor: "#63371e",
+        color: "#11ff11",
+    },
+    button: {
+        backgroundColor: "#63371e",
+        color: "#DDDDDD",
+        '&:hover': {
+            backgroundColor: '#52260f',
+            color: "#CCCCCC"
+        },
     }
 })
 
@@ -42,6 +60,8 @@ function Instructions({instructions}) {
 }
 
 function RecipePage(props) {
+    const classes = useImageStyle();
+
     const data = props.data;
     const [rows, setRows] = useState([]);
 
@@ -94,7 +114,7 @@ function RecipePage(props) {
 
     return (
         <Container>
-            <Box pt="15vh" pb="5vh" mx="10vw">
+            <Box pt="15vh" pb="5vh" mx="10vw" id="top-appbar">
                 <Typography variant="h3" gutterBottom>
                     {data['strMeal']}
                 </Typography>
@@ -147,8 +167,14 @@ function RecipePage(props) {
                 ""
             }
             <Box mx="10vw" mb="5vh" pb="5vh">
-                <Button fullWidth href="/recipe/new" color="primary"> Generate Recipe </Button>
+                <Button fullWidth href="/recipe/new" className={classes.button}> Generate Recipe </Button>
             </Box>
+
+            <ScrollTop {...props}>
+                <Fab color="inherit" size="small" aria-label="scroll back to top" className={classes.icon}>
+                    <KeyboardArrowUpIcon />
+                </Fab>
+            </ScrollTop>
         </Container>
     )
 }

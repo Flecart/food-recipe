@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
 import { makeStyles } from "@material-ui/core";
+import HideOnScroll from './HideOnScrool';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,12 +23,14 @@ function Navigator() {
 
     return(
         <React.Fragment>
-            <AppBar className={classes.root}>
-                <Toolbar>
-                    <Typography className={classes.title} variant="h6">Recipe Generator</Typography>
-                    <Button href="/" color="inherit">Home</Button>
-                </Toolbar>
-            </AppBar>
+            <HideOnScroll>
+                <AppBar className={classes.root}>
+                    <Toolbar>
+                        <Typography className={classes.title} variant="h6">Recipe Generator</Typography>
+                        <Button href="/" color="inherit">Home</Button>
+                    </Toolbar>
+                </AppBar>
+            </HideOnScroll>
         </React.Fragment>
     )
 }

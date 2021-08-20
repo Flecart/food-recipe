@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import RecipeSkeleton from "./RecipeUtils/RecipeSkeleton";
 import RecipePage from "./RecipeUtils/RecipePage";
 import React from "react";
-import Footer from "./Footer";
 
 function Recipe(props) {
     const [loading, setLoading] = useState(true);
@@ -43,7 +42,6 @@ function Recipe(props) {
     return(
         <React.Fragment>
             {loading ? <RecipeSkeleton/> : <RecipePage data={data}/>}
-            <Footer/>
         </React.Fragment>
     )
 }
