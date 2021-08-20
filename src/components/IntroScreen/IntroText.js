@@ -14,7 +14,7 @@ function IntroText(props) {
                 {/* TODO: add more text or make it bigger */}
             </Typography>
 
-            <Link to={`recipe/new`}>
+            <Link to="recipe/new">
                 <Button variant="contained" color="primary">
                     Get Receipt
                 </Button>

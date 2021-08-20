@@ -23,7 +23,7 @@ function Recipe(props) {
         } catch (e) {
             // TODO: feedback to user
             console.log(e)
-            return {
+            response = {
                 "errorMessage": `Error: ${e}`,
                 "isError": true
             }

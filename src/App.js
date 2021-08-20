@@ -15,7 +15,6 @@ function App() {
             <div> 
                 {showNav ? <Navigator/> : ""}
                 <Switch>
-                    {/* I want to redirect for nicer links 😊 */}
                     <Route exact path="/">
                         <IntroScreen showNav={setShowNav}/>
                     </Route>
