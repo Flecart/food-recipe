@@ -31,7 +31,7 @@ function NotFound(props) {
                     </Typography>
 
                     <Box pt="5vh">
-                        <Button href={process.env.PUBLIC_URL + "/"} className={classes.button}> Back</Button>
+                        <Button href="/" className={classes.button}> Back</Button>
                     </Box>
 
                 </Box>

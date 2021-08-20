@@ -14,23 +14,23 @@ function App() {
             <div> 
                 {showNav ? <Navigator/> : ""}
                 <Switch>
-                    <Route exact path={process.env.PUBLIC_URL + "/"}>
+                    <Route exact path="/">
                         <IntroScreen showNav={setShowNav}/>
                     </Route>
 
-                    <Route exact path={process.env.PUBLIC_URL + "/recipe/new"}>
+                    <Route exact path="/recipe/new">
                         <Recipe showNav={setShowNav}/>
                     </Route>
 
-                    <Route path={process.env.PUBLIC_URL + "/not-found"}>
+                    <Route path="/not-found">
                         <NotFound showNav={setShowNav}/>
                     </Route>
 
-                    <Route path={process.env.PUBLIC_URL}>
-                        <Redirect push to={process.env.PUBLIC_URL + "/not-found"}/>
+                    <Route path="*">
+                        <Redirect push to="/not-found"/>
                     </Route>
                 </Switch>
-            </div>        
+            </div>         
         </Router>
     );
 

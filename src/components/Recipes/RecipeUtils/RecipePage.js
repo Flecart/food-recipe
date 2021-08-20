@@ -144,7 +144,7 @@ function RecipePage(props) {
                 ""
             }
             <Box mx="10vw" mb="5vh" pb="5vh">
-                <Button fullWidth href={process.env.PUBLIC_URL + "/recipe/new"} className={classes.button}> Generate Recipe </Button>
+                <Button fullWidth href="/recipe/new" className={classes.button}> Generate Recipe </Button>
             </Box>
 
             <ScrollTop {...props}>
