@@ -10,24 +10,24 @@ function App() {
     const [showNav, setShowNav] = useState(false);
 
     return(
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <div> 
                 {showNav ? <Navigator/> : ""}
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path={process.env.PUBLIC_URL + "/"}>
                         <IntroScreen showNav={setShowNav}/>
                     </Route>
 
-                    <Route exact path="/recipe/new">
+                    <Route exact path={process.env.PUBLIC_URL + "/recipe/new"}>
                         <Recipe showNav={setShowNav}/>
                     </Route>
 
-                    <Route path="/not-found">
+                    <Route path={process.env.PUBLIC_URL + "/not-found"}>
                         <NotFound showNav={setShowNav}/>
                     </Route>
 
-                    <Route path="*">
-                        <Redirect push to="/not-found"/>
+                    <Route path={process.env.PUBLIC_URL}>
+                        <Redirect push to={process.env.PUBLIC_URL + "/not-found"}/>
                     </Route>
                 </Switch>
             </div>        

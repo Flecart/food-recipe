@@ -12,7 +12,6 @@ const useStyles = makeStyles({
 })
 
 function IntroText() {
-
     return( 
         <ThemeProvider theme={MainTheme}>
             <Typography align="left" variant="h3" gutterBottom>
@@ -26,7 +25,6 @@ function IntroText() {
             <Typography align="left" variant="body1" display="block" paraghraph gutterBottom>
                 Try your luck with thousands of possible recipes!
             </Typography>
-            <br/>
         </ThemeProvider>
     );
 }
@@ -35,18 +33,18 @@ export default function IntroTextBlock() {
     const classes = useStyles();
 
     return(
-            <Box pt="35vh" mx="10vmin">
-                <Grid container spacing={1}>
-                    <Grid container item xs={12} sm={6}>
-                        <IntroText/>
-                        
-                    </Grid>
+        <Box pt="35vh" mx="10vmin">
+            <Grid container spacing={1}>
+                <Grid container item xs={12} sm={6}>
+                    <IntroText/>
+                    
                 </Grid>
-                <Box pt="4vh">
-                <Button href="/recipe/new" variant="contained" className={classes.button}>
-                            Get Receipt
-                </Button>
-                </Box>
+            </Grid>
+            <Box pt="4vh">
+            <Button href={process.env.PUBLIC_URL + "/recipe/new"} variant="contained" className={classes.button}>
+                Get Receipt
+            </Button>
             </Box>
+        </Box>
     );
 }

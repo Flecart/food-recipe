@@ -14,8 +14,8 @@ const useStyle = makeStyles({
 })
 
 function NotFound(props) {
-    props.showNav(true);
     const classes = useStyle();
+    props.showNav(true);
     return(
         <React.Fragment>
             <Container>
@@ -31,7 +31,7 @@ function NotFound(props) {
                     </Typography>
 
                     <Box pt="5vh">
-                        <Button href="/" className={classes.button}> Back</Button>
+                        <Button href={process.env.PUBLIC_URL + "/"} className={classes.button}> Back</Button>
                     </Box>
 
                 </Box>

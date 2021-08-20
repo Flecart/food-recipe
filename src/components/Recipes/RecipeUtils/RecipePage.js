@@ -8,6 +8,8 @@ import ScrollTop from "./PageComponents/ScroolTop";
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
+import Youtube from "./PageComponents/Youtube";
+
 const useImageStyle = makeStyles({
     image: {
         height: "100%",
@@ -83,35 +85,6 @@ function RecipePage(props) {
         populateRows()
     }, [])
 
-    
-
-    // custom functions for youtube iframe
-
-    function getEmbeedUrl(ytURL) {
-        let index = ytURL.indexOf("watch?v=");
-        let embeedBase = "https://www.youtube.com/embed/"
-        return embeedBase + ytURL.substring(index + "watch?v=".length, ytURL.length);
-    }
-    
-    function getIframeWidth() {
-        let max = 800;
-        let calculatedValue = window.innerWidth / 2
-        return calculatedValue > max ? max : calculatedValue;
-    }
-    
-    function getIframeHeight() {
-        let width = getIframeWidth()
-        return width / 560 * 315;
-    }
-
-    window.addEventListener('resize', () => {
-        const iframe = document.querySelector("#iframe");
-        let width = getIframeWidth()
-        let height = getIframeHeight()
-        iframe.width = `${width}px`;
-        iframe.height = `${height}px`;
-    })
-
     return (
         <Container>
             <Fade in timeout={2000}>
@@ -135,7 +108,7 @@ function RecipePage(props) {
             <Fade in timeout={4000}>
                 <Thumbnail src={data["strMealThumb"]} title={data['strMeal']}/>
             </Fade>
-            
+
             <Box mx="10vw" mb="5vh">
                 <Box my="5vh">
                     <Typography variant="h5" gutterBottom>
@@ -164,14 +137,14 @@ function RecipePage(props) {
                         <Typography variant="h4" gutterBottom>
                             See Tutorial
                         </Typography>
-                        <iframe allowFullScreen={true} id="iframe" width={getIframeWidth()} height={getIframeHeight()} src={getEmbeedUrl(data['strYoutube'])} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                        <Youtube strYoutube={data['strYoutube']}/>
                     </Box>
                 </Box>
                 :
                 ""
             }
             <Box mx="10vw" mb="5vh" pb="5vh">
-                <Button fullWidth href="/recipe/new" className={classes.button}> Generate Recipe </Button>
+                <Button fullWidth href={process.env.PUBLIC_URL + "/recipe/new"} className={classes.button}> Generate Recipe </Button>
             </Box>
 
             <ScrollTop {...props}>
