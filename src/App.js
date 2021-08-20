@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import { useState } from "react";
 
 import IntroScreen from "./components/IntroScreen/IntroScreen";
-import History from "./components/Recipes/History";
 import Recipe from "./components/Recipes/Recipe";
 import Navigator from "./components/Navigator";
 import NotFound from "./components/NotFound";

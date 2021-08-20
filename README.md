@@ -7,7 +7,8 @@ I used these libraries:
 - @material-ui, 
 - react, 
 - react-router-dom 
-- react-cookies
+- @material-ui/icons
+
 
 Make sure to add in node modules if you want to make this work by yourself!
 
