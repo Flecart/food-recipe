@@ -1,10 +1,10 @@
-import { Typography, Container, Box, Divider, Button } from "@material-ui/core";
+import { Typography, Container, Box, Divider, Button, Fade } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import RecipeTable from "./PageComponents/RecipeTable";
 import PropTypes from "prop-types"
 
-import ScrollTop from "./BackToTop/ScroolTop";
+import ScrollTop from "./PageComponents/ScroolTop";
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
@@ -114,24 +114,28 @@ function RecipePage(props) {
 
     return (
         <Container>
-            <Box pt="15vh" pb="5vh" mx="10vw" id="top-appbar">
-                <Typography variant="h3" gutterBottom>
-                    {data['strMeal']}
-                </Typography>
+            <Fade in timeout={2000}>
+                <Box pt="15vh" pb="5vh" mx="10vw" id="top-appbar">
+                    <Typography variant="h3" gutterBottom>
+                        {data['strMeal']}
+                    </Typography>
 
-                <Typography gutterBottom>
-                    Area: {data['strArea'] ? data['strArea'] : "Not Available"}
-                </Typography>
+                    <Typography gutterBottom>
+                        Area: {data['strArea'] ? data['strArea'] : "Not Available"}
+                    </Typography>
 
-                <Typography gutterBottom>
-                    Category: {data['strCategory'] ? data['strCategory'] : "Not Available"}
-                </Typography>
-            </Box>
+                    <Typography gutterBottom>
+                        Category: {data['strCategory'] ? data['strCategory'] : "Not Available"}
+                    </Typography>
+                </Box>
+            </Fade>
 
             <Divider/>
 
-            <Thumbnail src={data["strMealThumb"]} title={data['strMeal']}/>
-
+            <Fade in timeout={4000}>
+                <Thumbnail src={data["strMealThumb"]} title={data['strMeal']}/>
+            </Fade>
+            
             <Box mx="10vw" mb="5vh">
                 <Box my="5vh">
                     <Typography variant="h5" gutterBottom>

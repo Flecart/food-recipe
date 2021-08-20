@@ -41,7 +41,7 @@ function Recipe(props) {
 
     return(
         <React.Fragment>
-            {loading ? <RecipeSkeleton/> : <RecipePage data={data}/>}
+            {loading ? <RecipeSkeleton/> : <RecipePage data={data}/> }
         </React.Fragment>
     )
 }

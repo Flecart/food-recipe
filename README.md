@@ -8,6 +8,7 @@ I used these libraries:
 - react, 
 - react-router-dom 
 - @material-ui/icons
+- @material-ui/lab
 
 
 Make sure to add in node modules if you want to make this work by yourself!

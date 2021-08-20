@@ -10,6 +10,7 @@ export const MainTheme = createTheme({
     typography: {
         h3: {
             fontSize: '2rem',
+            color: "#FFFFFF",
             '@media (min-width:600px)': {
                 fontSize: '2.5rem',
             },
@@ -17,5 +18,8 @@ export const MainTheme = createTheme({
                 fontSize: '3rem',
             },
         },
-    },
+        body1: {
+            color: "#DDDDDD"
+        }
+    }
 });
