@@ -16,6 +16,9 @@ const useImageStyle = makeStyles({
         objectFit: "cover",
         borderRadius: "1px",
         boxShadow: "0px 0px 0px 2px rgba(127,0,0,0.2)",
+        '@media (min-width:600px)': {
+            width: '40vw',
+        },
     },
     icon: {
         zIndex: 10,
