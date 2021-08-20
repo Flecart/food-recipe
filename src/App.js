@@ -10,7 +10,7 @@ function App() {
     const [showNav, setShowNav] = useState(false);
 
     return(
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
             <div> 
                 {showNav ? <Navigator/> : ""}
                 <Switch>

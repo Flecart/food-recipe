@@ -12,8 +12,7 @@ import Youtube from "./PageComponents/Youtube";
 
 const useImageStyle = makeStyles({
     image: {
-        height: "100%",
-        width: "100%",
+        width: "80vw",
         objectFit: "cover",
         borderRadius: "1px",
         boxShadow: "0px 0px 0px 2px rgba(127,0,0,0.2)",
@@ -39,7 +38,7 @@ function Thumbnail({src, title}) {
 
     let isValidSource = src !== null && src !== "";
     return(
-        <Box width="50%" minWidth="400px" mx="10vw" my="5vh">
+        <Box width="50%" minWidth="200px" mx="10vw" my="5vh">
             { isValidSource ? <img src={src} className={classes.image} alt={title}/> : "" }
         </Box>
     );

@@ -47,5 +47,5 @@
   "devDependencies": {
     "gh-pages": "^3.2.3"
   },
-  "homepage": "http://flecart.github.io/food-recipe/"
+  "homepage": "https://recipe-generator-flecart.herokuapp.com/"
 }

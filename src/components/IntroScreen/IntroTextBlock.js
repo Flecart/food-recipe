@@ -1,4 +1,4 @@
-import { Box, Grid, Fade } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
 import { Typography, ThemeProvider, Button } from "@material-ui/core";
 import { MainTheme } from "../styles/MainTheme";
 import { makeStyles } from '@material-ui/core/styles';
@@ -42,7 +42,7 @@ export default function IntroTextBlock() {
             </Grid>
             <Box pt="4vh">
             <Button href={process.env.PUBLIC_URL + "/recipe/new"} variant="contained" className={classes.button}>
-                Get Receipt
+                Get Recipe
             </Button>
             </Box>
         </Box>
