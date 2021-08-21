@@ -1,7 +1,10 @@
 import React from "react";
+import lozad from "lozad";
 
 function Youtube({strYoutube}) {
     const url = strYoutube;
+    const observer = lozad(); 
+    observer.observe();
 
     function getEmbeedUrl(ytURL) {
         let index = ytURL.indexOf("watch?v=");
@@ -30,7 +33,7 @@ function Youtube({strYoutube}) {
 
     return(
         <React.Fragment>
-            <iframe allowFullScreen={true} id="iframe" width={getIframeWidth()} height={getIframeHeight()} src={getEmbeedUrl(url)} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+            <iframe class="lozad" allowFullScreen={true} id="iframe" width={getIframeWidth()} height={getIframeHeight()} src={getEmbeedUrl(url)} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
         </React.Fragment>
     )
 }

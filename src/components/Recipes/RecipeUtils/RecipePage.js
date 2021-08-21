@@ -55,8 +55,8 @@ function Instructions({instructions}) {
         <Typography component={'span'} variant="body1" paragraph gutterBottom>
           {broken.map(listitem => (
             <div key={listitem}>
-              {listitem}
-              <br/>
+                {listitem}
+                <br/>
             </div>
           ))}
         </Typography>
@@ -64,6 +64,7 @@ function Instructions({instructions}) {
 }
 
 function RecipePage(props) {
+
     const classes = useImageStyle();
 
     const data = props.data;
@@ -107,8 +108,10 @@ function RecipePage(props) {
 
             <Divider/>
 
-            <Fade in timeout={4000}>
-                <Thumbnail src={data["strMealThumb"]} title={data['strMeal']}/>
+            <Fade in timeout={2000}>
+                <div>
+                    <Thumbnail src={data["strMealThumb"]} title={data['strMeal']}/>
+                </div>
             </Fade>
 
             <Box mx="10vw" mb="5vh">

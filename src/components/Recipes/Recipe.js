@@ -32,8 +32,6 @@ function Recipe(props) {
     useEffect(() => {
         if (data !== undefined) {
             setLoading(false)
-        console.log(data);
-
         }
     }, [data])
 

@@ -12,11 +12,15 @@ export default function IntroScreen(props) {
     })
     return(
         <Box>
-            <Fade in timeout={2000}>
-                <IntroImage/>
+            <Fade in timeout={1000}>
+                <div>
+                    <IntroImage/>
+                </div>
             </Fade>
-            <Fade in timeout={4000}>
-                <IntroTextBlock/>
+            <Fade in timeout={3000}>
+                <div>
+                    <IntroTextBlock/>
+                </div>
             </Fade>
         </Box>
     )
